@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Tracker - Data Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bill-tracker-page">
+    <div class="dashboard-container">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-grid">
+                        <div class="logo-square"></div>
+                        <div class="logo-square"></div>
+                        <div class="logo-square"></div>
+                        <div class="logo-square"></div>
+                    </div>
+                    <span class="logo-text">Data Dashboard</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item" data-module="contractor-list">
+                    <i class="fas fa-list"></i>
+                    <span>Contractor List</span>
+                </a>
+                <a href="bill-tracker.html" class="nav-item active" data-module="bill-tracker">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Bill Tracker</span>
+                </a>
+                <a href="epbg.html" class="nav-item" data-module="epbgs">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>EPBG's</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1 class="page-title">Bill Tracker</h1>
+                    <p class="welcome-text">Track and manage all your bills in one place.</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Search...">
+                    </div>
+                    <button class="notification-btn" id="notificationBellBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge" id="notificationBadge">0</span>
+                    </button>
+                    <div class="profile-section">
+                        <div class="profile-avatar">PK</div>
+                        <div class="profile-info">
+                            <div class="profile-name">Praveen Kumar</div>
+                            <div class="profile-role">Joint General Manager</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Bill Tracker</h2>
+                        <span class="total-badge" id="totalBadge">Total: 0</span>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="action-btn" id="saveBtn">
+                            <i class="fas fa-save"></i>
+                            <span>Save</span>
+                        </button>
+                        <button class="action-btn" id="refreshBtn">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Refresh</span>
+                        </button>
+                        <button class="action-btn" id="printBtn">
+                            <i class="fas fa-print"></i>
+                            <span>Print</span>
+                        </button>
+                        <button class="action-btn" id="exportBtn">
+                            <i class="fas fa-download"></i>
+                            <span>Export</span>
+                        </button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table" id="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>S.NO</th>
+                                    <th>E-FILE</th>
+                                    <th>CONTRACTOR</th>
+                                    <th>APPROVED DATE</th>
+                                    <th>APPROVED AMOUNT</th>
+                                    <th>BILL FREQUENCY</th>
+                                    <th>BILL DATE</th>
+                                    <th>BILL DUE DATE</th>
+                                    <th>BILL PAID DATE</th>
+                                    <th>PAID AMOUNT</th>
+                                    <th>ATTACHMENT</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Rows will be added dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="add-row-container">
+                        <button class="add-row-btn" id="addRowBtn">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Row</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="bill-tracker.js"></script>
+</body>
+</html>
+
